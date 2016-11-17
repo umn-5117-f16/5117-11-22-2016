@@ -65,6 +65,10 @@ import com.android.build.OutputFile
  * ]
  */
 
+// max's custom stuff
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**

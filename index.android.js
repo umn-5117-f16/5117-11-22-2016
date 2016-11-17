@@ -12,7 +12,9 @@ import {
   View
 } from 'react-native';
 
+
 import Hello from './demos/hello'
 import ToolbarDemo from './demos/toolbar-demo'
+import Material from './demos/material'
 
-AppRegistry.registerComponent('Csci5117Nov22', () => ToolbarDemo);
+AppRegistry.registerComponent('Csci5117Nov22', () => Material);
