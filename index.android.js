@@ -13,8 +13,8 @@ import {
 } from 'react-native';
 
 
-import Hello from './demos/hello'
-import ToolbarDemo from './demos/toolbar-demo'
-import Material from './demos/material'
+// import TheComponent from './demos/hello'
+// import TheComponent from './demos/toolbar-demo'
+import TheComponent from './demos/material'
 
-AppRegistry.registerComponent('Csci5117Nov22', () => Material);
+AppRegistry.registerComponent('Csci5117Nov22', () => TheComponent);
