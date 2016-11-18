@@ -28,16 +28,6 @@ export default class Material extends Component {
             <Text>Some text to go in the body.</Text>
           </Card.Body>
         </Card>
-        <Card style={styles.hamburgerCard}>
-          <Card.Media
-            height={200}
-            image={<Image source={{uri: 'http://i.imgur.com/CUG0Aofb.jpg'}} />}
-            overlay
-          />
-          <Card.Body>
-            <Text>Some text to go in the body.</Text>
-          </Card.Body>
-        </Card>
       </View>
     );
   }
