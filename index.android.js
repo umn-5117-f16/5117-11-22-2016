@@ -15,6 +15,7 @@ import {
 
 // import TheComponent from './demos/hello'
 // import TheComponent from './demos/toolbar-demo'
-import TheComponent from './demos/material'
+// import TheComponent from './demos/material'
+import TheComponent from './demos/geo'
 
 AppRegistry.registerComponent('Csci5117Nov22', () => TheComponent);
