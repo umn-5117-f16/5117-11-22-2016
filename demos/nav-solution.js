@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, Navigator, TouchableHighlight } from 'react-native';
+import { BackAndroid, View, Text, Navigator, TouchableHighlight } from 'react-native';
 
 class MyScene extends Component {
   render() {
@@ -12,8 +12,6 @@ class MyScene extends Component {
         <TouchableHighlight onPress={this.props.onBack}>
           <Text>Tap me to go back</Text>
         </TouchableHighlight>
-
-        <Text style={{margin: 10}}>TODO add support for back button with BackAndroid</Text>
       </View>
     )
   }
@@ -25,11 +23,33 @@ MyScene.propTypes = {
   onBack: PropTypes.func.isRequired,
 };
 
+function initBackButton(myNavigator) {
+  BackAndroid.addEventListener('hardwareBackPress', function() {
+   // this.onMainScreen and this.goBack are just examples, you need to use your own implementation here
+   // Typically you would use the navigator here to go to the last state.
+
+   console.log('back button handler!');
+   myNavigator.pop();
+   return true;
+  //  if (!this.onMainScreen()) {
+  //    this.goBack();
+  //    return true;
+  //  }
+  //  return false;
+  });
+}
+
 export default class SimpleNavigationApp extends Component {
+
+  componentDidMount() {
+    initBackButton(this.refs.navigator);
+  }
+
   render() {
     return (
       <Navigator
         initialRoute={{ title: 'My Initial Scene', index: 0 }}
+        ref="navigator"
         renderScene={(route, navigator) =>
           <MyScene
             title={route.title}
@@ -51,8 +71,6 @@ export default class SimpleNavigationApp extends Component {
             }}
           />
         }
-        configureScene={(route, routeStack) =>
-          Navigator.SceneConfigs.FadeAndroid}
       />
     )
   }
